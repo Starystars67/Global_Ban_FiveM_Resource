@@ -1,1 +1,1 @@
-# Global_Ban_Client
+# Global_Ban_FiveM_Resource
