@@ -1,0 +1,7 @@
+-- On joining we need to check them for XSS attempts and VPN / PROXY Checking 
+-- 
+-- On resource start get the latest ban data? - Or on each player?
+-- 
+-- 
+-- 
+-- 
