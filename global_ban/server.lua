@@ -23,22 +23,22 @@
 -- Check our key is not blank
 if Config.Key ~= "" then
 	-- Check our key is valid
-	PerformHttpRequest("http://gb.yourthought.co.uk/keymaster/check?key="..Config.Key, function (errorCode, resultData, resultHeaders)
+	PerformHttpRequest("https://gb.yourthought.co.uk/keymaster/check?key="..Config.Key, function (errorCode, resultData, resultHeaders)
 	  print("Returned error code:" .. tostring(errorCode))
 	  print("Returned data:" .. tostring(resultData))
 	  print("Returned result Headers:" .. tostring(resultHeaders))
 
-		if resultData == "Good To Go!" then -- update this when backend is setup
+		if resultData == "Good" then -- update this when backend is setup
 			-- Script Update Check
 			PerformHttpRequest("https://github.com/Starystars67/Global_Ban_FiveM_Resource/tree/master/global_ban/version.json", function(err, response, headers)
 				local data = json.decode(response)
 
-				if curVersion ~= data.version and tonumber(curVersion) < tonumber(data.version) then
+				if Config.CurVersion ~= data.version and tonumber(Config.CurVersion) < tonumber(data.version) then
 					print("--------------------------------------------------------------------------")
 					print()
 					print("\nUpdate Changelog:\n"..data.changelog)
 					print("\n--------------------------------------------------------------------------")
-				elseif tonumber(curVersion) > tonumber(data.version) then
+				elseif tonumber(Config.CurVersion) > tonumber(data.version) then
 					print("Your version of "..resourceName.." seems to be higher than the current version.")
 				else
 					print(resourceName.." is up to date!")
