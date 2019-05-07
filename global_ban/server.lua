@@ -23,7 +23,7 @@
 -- Check our key is not blank
 if Config.Key ~= "" then
 	-- Check our key is valid
-	PerformHttpRequest("https://gb.yourthought.co.uk/keymaster/check?key="..Config.Key, function (errorCode, resultData, resultHeaders)
+	PerformHttpRequest("https://global-ban.yourthought.co.uk/keymaster/check?key="..Config.Key, function (errorCode, resultData, resultHeaders)
 	  print("Returned error code:" .. tostring(errorCode))
 	  print("Returned data:" .. tostring(resultData))
 	  print("Returned result Headers:" .. tostring(resultHeaders))
